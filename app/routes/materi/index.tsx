@@ -31,12 +31,10 @@ export default function MateriIndexRoute() {
             <li key={cat.title}>
               <div>
                 <Link to={cat.slug}>
-                  <div>
-                    <h2>{cat.title}</h2>
-                    <p>{cat.desc}</p>
-                    <div>{cat.updatedAt}</div>
-                  </div>
+                  <h2>{cat.title}</h2>
                 </Link>
+                <p>{cat.desc}</p>
+                <div>{cat.updatedAt}</div>
               </div>
             </li>
           ))}

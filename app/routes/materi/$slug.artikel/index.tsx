@@ -1,6 +1,8 @@
+
+
 export default function ArticleRoute() {
 
     return (
-        <h1>Tambah artikel di kategori</h1>
+        <h1>artikel1</h1>
     );
 }

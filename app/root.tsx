@@ -1,5 +1,6 @@
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
@@ -7,6 +8,7 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import styles from "~/tailwind.css";
 
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
@@ -14,6 +16,10 @@ import Footer from "./components/footer";
 export const meta: MetaFunction = () => {
   return { title: "Brainiest" };
 };
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+
+
 
 function Document({ children }: { children: React.ReactNode }) {
   return (

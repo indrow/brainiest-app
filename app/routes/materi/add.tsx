@@ -76,7 +76,7 @@ export const action: ActionFunction = async ({ request }) => {
     data: fields,
   });
 
-  return redirect("/materi");
+  return redirect(`/materi/${slug}`);
 };
 
 export default function AddCategoryRoute() {

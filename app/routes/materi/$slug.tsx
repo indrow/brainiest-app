@@ -33,19 +33,26 @@ export default function CategoryRoute() {
   const data = useLoaderData<LoaderData>();
 
   return (
-    <div>
-      <Link to={`/materi/`}>
-        <button>Kembali</button>
-      </Link>
+    <>
+      <div>
+        <Link to={`/materi/`}>
+          <button>Kembali</button>
+        </Link>
 
-      <h2>{data.category.title}</h2>
-      <p>{data.category.desc}</p>
+        <h2>{data.category.title}</h2>
+        <p>{data.category.desc}</p>
 
-      
-      <Link to={`/materi/edit/${data.category.slug}`}>
-        <button>Edit Kategori</button>
-      </Link>
-    </div>
+        <Link to={`/materi/edit/${data.category.slug}`}>
+          <button>Edit Kategori</button>
+        </Link>
+      </div>
+      <div>
+        <h1>Artikel di kategori {data.category.title}</h1>
+        <div>
+          <Link to={`/materi/${data.category.slug}/artikel/add`}>Buat artikel di kategori ini</Link>
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -54,7 +61,7 @@ export function CatchBoundary() {
 
   return (
     <>
-      <div>Error: {caught.status}</div>
+      <div>{caught.status}</div>
       <div>{caught.data.message}</div>
     </>
   );
